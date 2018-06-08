@@ -48,6 +48,17 @@ Uncomment the following line to use our solution.
 
 //apply from:"solution.gradle"
 
+android {
+    productFlavors {
+        free {
+            applicationId 'com.udacity.gradle.buildflavors.free'
+        }
+        paid {
+            applicationId 'com.udacity.gradle.buildflavors.paid'
+        }
+    }
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:24.1.1'

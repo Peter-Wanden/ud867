@@ -10,6 +10,15 @@ Exercises:
 2. Give your task a description.
 3. Add an action to your task which prints "Hello World!"
 
+*/
+
+task hello {
+	description = 'This is a Gradle task'
+	doLast {
+		println 'Hello World'
+	}
+}
+
 Hint: Take a look at the Gradle DSL Reference if you need help adding a
 description.
 
