@@ -1,17 +1,16 @@
-package com.udacity.gradle.builditbigger;
+package com.example.peter.myapplicationsolution;
 
-import android.content.Context;
-import android.os.Bundle;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-
+import com.example.jokedisplay.JokeActivity;
+import com.example.jokesource.JokeSource;
 
 public class MainActivity extends AppCompatActivity {
-
-    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,22 +18,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
@@ -42,9 +35,11 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    // Make the button kick off a task to retrieve a joke
-    public void tellJoke(View view) {
+    public void launchJokeActivity(View view) {
+        Intent intent = new Intent(this, JokeActivity.class);
+        JokeSource jokeSource = new JokeSource();
+        String joke = jokeSource.getJoke();
+        intent.putExtra(JokeActivity.)
 
-        new EndpointsAsyncTask(getApplicationContext()).execute();
     }
 }

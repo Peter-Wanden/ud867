@@ -1,0 +1,2 @@
+// Include the Java projects here
+include ':app', ':manualjokes', ':wizardJokes'

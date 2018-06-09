@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">jokedisplay</string>
+    <string name="missing_joke">Two parrots sitting on a perch, one says to the other, can you smell fish!</string>
+    <string name="action_settings">Settings</string>
+</resources>
