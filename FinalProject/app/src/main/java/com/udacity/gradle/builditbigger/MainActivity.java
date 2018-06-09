@@ -1,5 +1,6 @@
 package com.udacity.gradle.builditbigger;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,8 @@ import com.example.jokeprovider.Joke;
 
 
 public class MainActivity extends AppCompatActivity {
+
+    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,19 +46,9 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    // Make the button kick off a task to retrieve a joke
     public void tellJoke(View view) {
 
-        Joke joke = new Joke();
-        String myJoke = joke.getJoke();
-
-        // Toast.makeText(this, myJoke, Toast.LENGTH_SHORT).show();
-        launchLibraryDisplayJoke(myJoke);
-    }
-
-    private void launchLibraryDisplayJoke(String myJoke) {
-
-        Intent intent = new Intent(this, ActivityJokeDisplay.class);
-        intent.putExtra(ActivityJokeDisplay.JOKE_KEY, myJoke);
-        startActivity(intent);
+        new EndpointsAsyncTask(getApplicationContext()).execute();
     }
 }

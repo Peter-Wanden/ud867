@@ -30,27 +30,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
-//    productFlavors {
-//        free {
-//            applicationId "com.udacity.gradle.builditbigger.free"
-//            flavorDimensions "default"
-//            minSdkVersion 21
-//            targetSdkVersion 28
-//        }
-//        paid {
-//            applicationId "com.udacity.gradle.builditbigger.paid"
-//            flavorDimensions "default"
-//            minSdkVersion 21
-//            targetSdkVersion 28
-//        }
-//
-//    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // Java library that provides a joke
     implementation project(':jokeprovider')
+    // Android library that displays the provided joke
     implementation project(':displayjoke')
 
     implementation 'com.android.support:appcompat-v7:27.1.1'
