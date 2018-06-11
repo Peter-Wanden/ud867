@@ -1,17 +1,12 @@
 package com.udacity.gradle.builditbigger;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-
-
 public class MainActivity extends AppCompatActivity {
-
-    Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
     // Make the button kick off a task to retrieve a joke
     public void tellJoke(View view) {
 
-        new EndpointsAsyncTask(getApplicationContext()).execute();
+        EndpointsAsyncTask endpointsAsyncTask = new EndpointsAsyncTask(getApplicationContext());
+        endpointsAsyncTask.execute();
     }
 }
